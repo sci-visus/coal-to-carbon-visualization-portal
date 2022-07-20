@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<script src="{{url_for('static', filename='js/code.js')}}"></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+	<meta charset="utf-8">
+	<title>Coal To Carbon Visualization Portal</title>
+</head>
+
+<body>
+
+	<div class="wrapper">
+
+		<div class="header_backdrop">
+			<div class="header_text">
+				<h1>Coal To Carbon Visualization Portal</h1>
+			</div>
+		</div>
+
+		<div class="sidenav">
+			<a title="Coal To Carbon Visualization Portal" rel="home" class="" onclick="window.location.href='{{ url_for( 'index') }}';">HOME</a>
+		</div>
+
+		<div class="button_section">
+
+			<!-- list of notebooks -->
+			<form class="" method="post">
+				<select class="button" onchange="location=this.value;" method="GET" action="/">
+					<option value="" selected>select a notebook</option>
+					{% for key in links %}
+						<option value="{{url_for('chooseNotebook', key=key)}}">{{key}}</option>
+					{% endfor %}
+				</select>
+			</form>
+
+			<!-- download button (DISABLED since broken right now) -->
+			<!-- 
+			<div class="button_containers">
+				<button class="locally button" type="submit" onclick="window.location.href='{{ url_for( 'downloadNotebook') }}';">
+					Run locally (downlad file)
+				</button>
+			</div>
+			-->
+
+			<!-- show bokeh stuff -->
+			{% if selected %}
+				<iframe src="{{ selected }}" title="Map IFRAME" width=900pt height=900pt />
+			{% endif %}
+
+		</div>
+	</div>
+</body>
+
+</html>

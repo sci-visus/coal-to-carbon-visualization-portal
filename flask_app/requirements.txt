@@ -1,0 +1,10 @@
+flask 
+pandas 
+bokeh 
+requests 
+multiprocess 
+notebook 
+numpy 
+scipy 
+OpenVisusNoGui 
+GitPython
