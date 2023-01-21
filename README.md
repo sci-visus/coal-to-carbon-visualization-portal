@@ -1,5 +1,7 @@
 # Coal To Carbon Visualization Portal
 
+
+
 Repository for the code for the visualization portal.
 
 This data portal automaticly makes avalible data visulizations and interactive data visulizations from Juypter Notebook stored on a GitHub repository. It automates the process of going from Juypter Notebook code to an easily sharable data visulization. 
